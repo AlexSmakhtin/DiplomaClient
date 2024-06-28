@@ -1,0 +1,10 @@
+.appHeaderContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    width: 100%;
+    height: 150px;
+    font-family: 'Sclate', sans-serif;
+    font-size: 4em;
+    gap: 10px;
+}

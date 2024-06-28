@@ -1,0 +1,19 @@
+{
+  "mainDescription" : "Text quest with AI as the host" ,
+  "description1" : "Create your unique character" ,
+  "description2" : "Experience an adventure that will never be repeated" ,
+  "description3" : "Your story, your decisions, your quest - test the power of artificial intelligence" ,
+  "description4" : "A whole world of adventure is in your hands. Forward, towards the unknown!" ,
+  "joinButtons": {
+    "btn1": "Try for free",
+    "btn2": "Buy subscription",
+    "btn3": "Enter"
+  },
+  "linkToOpenAI" : "Powered by OpenAI" ,
+  "chooseLanguage" : "Choose language",
+  "languages" : {
+    "en" : "English" ,
+    "ru" : "Russian"
+  },
+  "currentLanguage": "English"
+}
