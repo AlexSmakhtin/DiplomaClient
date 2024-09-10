@@ -1,0 +1,6 @@
+.errorContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 300px;
+}

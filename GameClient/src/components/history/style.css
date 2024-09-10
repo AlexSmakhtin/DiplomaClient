@@ -1,0 +1,39 @@
+.historyListContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    padding: 10px;
+}
+
+.historyTable {
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.tableBottomBorder {
+    border-bottom: 3px solid darkslateblue;
+}
+
+.dateBorder {
+    border-left: 3px solid darkslateblue;
+    border-right: 3px solid darkslateblue;
+}
+.statusBorder{
+    border-left: 3px solid darkslateblue;
+}
+.gameButton{
+    flex: 0.5;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.historyPagination{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+}

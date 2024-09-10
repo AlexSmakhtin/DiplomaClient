@@ -1,95 +1,117 @@
 import {useTranslation} from "react-i18next";
-import {Button, Text} from "@chakra-ui/react";
+import {
+    Button, Divider,
+    Drawer,
+    DrawerBody,
+    DrawerCloseButton,
+    DrawerContent,
+    DrawerHeader,
+    DrawerOverlay,
+    Text, useDisclosure
+} from "@chakra-ui/react";
 import './style.css'
+import Enter from "../enter";
+import {useState} from "react";
+import Registration from "../registration";
 
-const Welcome = () =>{
+const Welcome = () => {
     const {t} = useTranslation();
+    const [actionContent, setActionContent] = useState<string | null>(null);
+    const {isOpen, onOpen, onClose} = useDisclosure()
+    const actions = {enter: t("actions.enter"), register: t("actions.registration")}
 
-    const handleTryForFree = () => {
-
+    const handleAction = (content: string) => {
+        setActionContent(content);
+        onOpen();
     };
-    const handleSubscribe = () => {
 
-    };
-    return(
+    return (
         <>
-            <Text
-                width={'max-content'}
-                marginRight={'auto'}
-                marginLeft={'auto'}
-                className={'boxShadow border3Darkslateblue'}
-                height={'max-content'}
-                padding={'20px'}
-                marginTop={0}
-                marginBottom={0}
-                fontSize={'40px'}
-            >
-                {t('mainDescription')}
-            </Text>
             <div className={'baitsContainer'}>
-                <Text
-                    className={'boxShadow border3Darkslateblue'}
-                    width={'max-content'}
-                    padding={'15px'}>
-                    {t('description1')}
-                </Text>
-                <Text
-                    className={'boxShadow border3Darkslateblue'}
-                    width={'max-content'}
-                    padding={'15px'}>
-                    {t('description2')}
-                </Text>
-                <Text
-                    className={'boxShadow border3Darkslateblue'}
-                    width={'max-content'}
-                    padding={'15px'}>
-                    {t('description3')}
-                </Text>
-                <Text
-                    className={'boxShadow border3Darkslateblue'}
-                    width={'max-content'}
-                    padding={'15px'}>
-                    {t('description4')}
-                </Text>
+                <div className={"mainDescription boxShadow border3Darkslateblue"}>
+                    <Text
+                        userSelect={'none'}
+                    >
+                        {t('mainDescription')}
+                    </Text>
+                </div>
+                <div className={"description boxShadow border3Darkslateblue"}>
+                    <Text
+                        userSelect={'none'}
+                    >
+                        {t('description1')}
+                    </Text>
+                </div>
+                <div className={"description boxShadow border3Darkslateblue"}>
+                    <Text
+                        userSelect={'none'}
+                    >
+                        {t('description2')}
+                    </Text>
+                </div>
+                <div className={"description boxShadow border3Darkslateblue"}>
+                    <Text
+                        userSelect={'none'}
+                    >
+                        {t('description3')}
+                    </Text>
+                </div>
+                <div className={"description boxShadow border3Darkslateblue"}>
+                    <Text
+                        userSelect={'none'}
+                    >
+                        {t('description4')}
+                    </Text>
+                </div>
+                <div className={'joinButtonsContainer'}>
+                    <Button
+                        margin={'auto'}
+                        className={"boxShadow"}
+                        fontSize={'1.3em'}
+                        colorScheme={'green'}
+                        onClick={() => handleAction(actions.register)}
+                    >
+                        {t('actions.registration')}
+                    </Button>
+                    <Button
+                        margin={'auto'}
+                        fontSize={'1.3em'}
+                        className={"boxShadow"}
+                        colorScheme={'green'}
+                        onClick={() => handleAction(actions.enter)}
+                    >
+                        {t('actions.enter')}
+                    </Button>
+                </div>
             </div>
-            <div className={'joinButtonsContainer'}>
-                <Button
-                    margin={'auto'}
-                    borderRadius={'10px'}
-                    colorScheme={'pink'}
-                    onClick={handleTryForFree}
-                    height={'auto'}
-                    padding={'15px'}
-                    fontSize={'30px'}
-                    width={'max-content'}
-                >
-                    {t('joinButtons.btn1')}
-                </Button>
-                <Button
-                    margin={'auto'}
-                    borderRadius={'10px'}
-                    colorScheme={'pink'}
-                    onClick={handleSubscribe}
-                    height={'auto'}
-                    padding={'15px'}
-                    fontSize={'30px'}
-                    width={'max-content'}
-                >
-                    {t('joinButtons.btn2')}
-                </Button>
-                <Button
-                    margin={'auto'}
-                    borderRadius={'10px'}
-                    colorScheme={'pink'}
-                    onClick={handleSubscribe}
-                    height={'auto'}
-                    padding={'15px'}
-                    fontSize={'30px'}
-                    width={'max-content'}
-                >
-                    {t('joinButtons.btn3')}
-                </Button>
-            </div>
+            <Drawer
+                blockScrollOnMount={false}
+                isOpen={isOpen}
+                placement='top'
+                onClose={onClose}
+            >
+                <DrawerOverlay/>
+                <DrawerContent>
+                    <DrawerCloseButton/>
+                    <DrawerHeader
+                        display={'flex'}
+                        flexDirection={'row'}
+                        justifyContent={'center'}
+                        fontSize={'2em'}
+                    >
+                        {actionContent}
+                    </DrawerHeader>
+                    <Divider margin={'auto'}  width={'50%'}/>
+                    <DrawerBody
+                        display={'flex'}
+                        flexDirection={'column'}
+                        justifyContent={'start'}
+                        gap={'15px'}
+                    >
+                        {actionContent === actions.enter ? <Enter/> : <Registration/>}
+                    </DrawerBody>
+                </DrawerContent>
+            </Drawer>
         </>
     )
 }

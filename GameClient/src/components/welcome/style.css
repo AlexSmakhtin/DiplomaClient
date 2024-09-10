@@ -1,4 +1,3 @@
-
 .baitsContainer {
     margin-right: auto;
     margin-left: auto;
@@ -9,12 +8,46 @@
     gap: 20px;
     max-width: 700px;
 }
+.mainDescription{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: max-content;
+    height: max-content;
+    padding: 20px;
+    font-size: 2em;
+    text-align: center;
+}
+
+.description{
+    width: max-content;
+    height: max-content;
+    padding: 20px;
+    font-size: 1.4em;
+    text-align: center;
+}
 
 .joinButtonsContainer {
-    font-family: 'Arial', 'sans-serif';
+    font-family: 'Segoe UI', 'sans-serif';
     display: flex;
     flex-direction: column;
     justify-content: start;
-    margin: auto;
+    margin: 40px auto;
     gap: 20px;
+}
+
+
+@media screen and (max-width: 750px){
+    .mainDescription{
+        font-size: 1.4em;
+        width: 100%;
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+    .description{
+        font-size: 1em;
+        width: 100%;
+        margin-right: 40px;
+        margin-left: 40px;
+    }
 }

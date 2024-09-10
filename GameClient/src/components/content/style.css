@@ -1,12 +1,16 @@
 .appContent {
     display: flex;
-    flex-direction: column;
-    min-height: 700px;
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: start;
-    width: 70%;
+    flex-direction: row;
+    flex: 1;
+    margin: 20px auto;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
     font-family: 'FiraSans', 'sans-serif';
     gap: 40px;
+}
+
+@media  screen and (min-height: 1050px){
+    .appContent{
+    }
 }

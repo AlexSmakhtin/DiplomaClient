@@ -1,0 +1,7 @@
+.enterContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 20px;
+    margin: auto;
+}

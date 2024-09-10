@@ -1,6 +1,11 @@
 .mainImage{
-    background-image: url('resources/ai-chatbot-seamless-pattern-design-artificial-intelligence-repeat-background-template-wrapping_607579-515.jpg');
+    background-image: url('../resources/back.webp');
     background-position: center;
     background-repeat: repeat;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}

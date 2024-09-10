@@ -1,0 +1,10 @@
+.accountNavigation{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.accountInput{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}

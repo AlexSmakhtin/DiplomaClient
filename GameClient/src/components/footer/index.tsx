@@ -10,21 +10,20 @@ import {
     useDisclosure
 } from "@chakra-ui/react";
 import {MdLanguage} from "react-icons/md";
-import {AiFillOpenAI} from "react-icons/ai";
 import {useTranslation} from 'react-i18next';
+import { FiCheckCircle } from "react-icons/fi";
 
 const Footer = () => {
     const {t, i18n} = useTranslation();
     const languages = {
         en: "en",
-        ru: "ru"
+        ru: "ru-Ru"
     }
     const {isOpen, onOpen, onClose} = useDisclosure()
 
 
-    console.log(i18n.language)
     const handleGoToOpenAI = () => {
-        window.open("https://openai.com", '_blank');
+        window.open("https://developers.sber.ru/portal/products/gigachat-api", '_blank');
     };
     const handleLanguageChange = (language: string) => {
         i18n.changeLanguage(language)
@@ -34,11 +33,11 @@ const Footer = () => {
     return (
         <div className={'appFooter'}>
             <Button
+                className={'boxShadow'}
                 margin={0}
-                borderRadius={'10px'}
-                colorScheme={'green'}
+                colorScheme={'teal'}
                 onClick={handleGoToOpenAI}
-                leftIcon={<AiFillOpenAI/>}
+                leftIcon={<FiCheckCircle />}
                 height={'auto'}
                 padding={'10px'}
                 fontSize={'20px'}
@@ -46,9 +45,9 @@ const Footer = () => {
                 {t('linkToOpenAI')}
             </Button>
             <Button
+                className={'boxShadow'}
                 margin={0}
-                borderRadius={'10px'}
-                colorScheme={'green'}
+                colorScheme={'teal'}
                 onClick={onOpen}
                 leftIcon={<MdLanguage/>}
                 height={'auto'}
@@ -58,6 +57,7 @@ const Footer = () => {
                 {t('currentLanguage')}
             </Button>
             <Drawer
+                blockScrollOnMount={false}
                 isOpen={isOpen}
                 placement='bottom'
                 onClose={onClose}
@@ -69,6 +69,7 @@ const Footer = () => {
                         display={'flex'}
                         flexDirection={'row'}
                         justifyContent={'center'}
+                        fontSize={'2em'}
                     >
                         {t('chooseLanguage')}
                     </DrawerHeader>

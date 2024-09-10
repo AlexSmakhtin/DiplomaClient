@@ -1,19 +1,25 @@
 .appContainer {
     display: flex;
     flex-direction: column;
-    height: 100vh;
-    min-width: 300px;
+    min-height: 100vh;
 }
 @font-face {
     font-family: 'Sclate';
-    src: url('fonts/Sclate.ttf') format('truetype');
+    src: url('../fonts/Sclate.woff') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('../fonts/Nunito-Regular.woff') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'FiraSans';
-    src: url('fonts/FiraSans-Heavy.otf') format('truetype');
+    src: url('../fonts/FiraSans-Heavy.woff') format('truetype');
     font-weight: normal;
     font-style: normal;
 }

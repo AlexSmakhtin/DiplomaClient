@@ -1,0 +1,73 @@
+.userMessage {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    position: relative;
+    margin-bottom: 3px;
+}
+.userMessageLast {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    position: relative;
+    margin-bottom: 12px;
+}
+.userMessageLast:after {
+    position: absolute;
+    content: '';
+    bottom: -10px;
+    width: 0;
+    right: 20px;
+    height: 0;
+    border: 18px solid transparent;
+    border-top-color: blanchedalmond;
+    border-bottom: 20px;
+    border-right: 20px;
+}
+
+.assistantMessage {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    gap: 10px;
+    margin-bottom: 3px;
+}
+.assistantMessageLast {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+.assistantMessageLast:after {
+    position: absolute;
+    content: '';
+    bottom: -10px;
+    width: 0;
+    left: 20px;
+    height: 0;
+    border: 18px solid transparent;
+    border-top-color: aliceblue;
+    border-bottom: 20px;
+    border-left: 0;
+}
+.messageContent{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    border-radius: 10px;
+    padding: 10px;
+}
+.messageColorAi{
+    background-color: aliceblue;
+}
+.messageColorUser{
+    background-color: blanchedalmond;
+}
+.messageHeader{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
