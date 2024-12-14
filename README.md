@@ -1,0 +1,1 @@
+React web application. Text quest with artificial intelligence. Presentation - https://docs.google.com/presentation/d/1cainMExM2Mp57zS8Puj20KeHVBZsOktp0lps62ZwEmE/edit?usp=sharing . Video - https://drive.google.com/file/d/1ibExcFZ1n80s_AoqC3PMFEBE-A6w9RDe/view?usp=sharing .
